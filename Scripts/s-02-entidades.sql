@@ -48,7 +48,7 @@ create table propietario(
 
 create table telefono_propietario(
 	telefono_propietario_id number(10,0) constraint telefono_propietario_pk primary key,
-	num_telefono varchar2(15) constraint telefono_propietario_num_telefono_uk unique,
+	num_telefono number(15) constraint telefono_propietario_num_telefono_uk unique,
 	propietario_id number(10,0) constraint telefono_propietario_propietario_id
 		references propietario(propietario_id)
 );
