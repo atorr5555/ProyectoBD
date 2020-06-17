@@ -77,7 +77,7 @@ create table vehiculo(
   modelo_id varchar2(10)not null,
   constraint vehiculo_modelo_id_fk foreign key (modelo_id)
     references modelo(modelo_id),
-  placa_id number(10,0) not null,
+  placa_id number(10,0) not null constraint vehiculo_placa_id_uk unique,
   constraint vehiculo_placa_id_fk foreign key (placa_id)
     references placa(placa_id),
   propietario_id number(10,0) not null,
