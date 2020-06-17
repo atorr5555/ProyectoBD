@@ -21,3 +21,5 @@ begin
     raise_application_error(-20020, 'Ya existe una licencia vigente de ese tipo');
   end if;
 end;
+/
+show errors

@@ -30,7 +30,7 @@ create table marca(
 );
 
 create table modelo(
-  modelo_id varchar2(10) constraint modelo_pk primary key,
+  modelo_id number(10,0) constraint modelo_pk primary key,
   nombre varchar2(20) not null,
   marca_id number(10,0) not null, 
   constraint modelo_marca_id_fk foreign key (marca_id)
@@ -74,7 +74,7 @@ create table vehiculo(
   es_particular number(1,0) not null,
   inicio_periodo date not null,
   fecha_status date default sysdate not null,
-  modelo_id varchar2(10)not null,
+  modelo_id number(10,0)not null,
   constraint vehiculo_modelo_id_fk foreign key (modelo_id)
     references modelo(modelo_id),
   placa_id number(10,0) not null constraint vehiculo_placa_id_uk unique,
