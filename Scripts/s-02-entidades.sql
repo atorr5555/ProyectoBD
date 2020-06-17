@@ -72,7 +72,7 @@ create table vehiculo(
   es_transporte_publico number(1,0) not null,
   es_carga number(1,0) not null,
   es_particular number(1,0) not null,
-  inicio_periodo date default sysdate not null,
+  inicio_periodo date not null,
   fecha_status date default sysdate not null,
   modelo_id varchar2(10)not null,
   constraint vehiculo_modelo_id_fk foreign key (modelo_id)
