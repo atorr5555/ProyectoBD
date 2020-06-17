@@ -182,7 +182,6 @@ create table historico_status_vehiculo(
 create table historico_propietario(
   historico_propietario_id number(10,0) constraint historico_propietario_pk primary key,
   inicio_periodo date not null,
-  fin_periodo date not null,
   propietario_id number(10,0) not null,
   constraint historico_propietario_propietario_fk foreign key (propietario_id)
     references propietario(propietario_id),
@@ -234,4 +233,14 @@ create table pago_cuota(
   fecha_pago date not null,
   importe number(7,2) not null,
   constraint pago_cuota_pk primary key(folio,vehiculo_id)
+);
+
+create table revision_licencia(
+  revision_licencia_id number(10,0) constraint revision_licencia_pk primary key,
+  vehiculo_id number(10,0),
+  propietario_id number(10,0),
+  constraint revision_licencia_vehiculo_id_fk foreign key (vehiculo_id)
+    references vehiculo(vehiculo_id),
+  constraint revision_licencia_propietario_id_fk foreign key (propietario_id)
+    references propietario(propietario_id)
 );
