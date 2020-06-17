@@ -1,5 +1,5 @@
 --@Autor: Flores Fuentes Kevin y Torres Verastegui Jose Antonio
---@Fecha creación: 1/06/2020
+--@Fecha creación: 17/06/2020
 --@Descripción: Trigger para revisar la cantidad de licencias del propietario
 
 set serveroutput on
