@@ -37,3 +37,5 @@ begin
 	values(seq_historico_propietario.nextval, :new.inicio_periodo,
 		:new.propietario_id, :new.vehiculo_id);
 end;
+/
+show errors
