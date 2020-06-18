@@ -44,7 +44,7 @@ begin
     es_carga, es_particular, modelo_id, placa_id, propietario_id,
     status_vehiculo_id)
   values(v_vehiculo_id, to_char(v_fecha, 'yyyy'),
-		to_char(concat(concat(v_marca_id,v_modelo_id)), v_vehiculo_id), 0, 1, 0,
+		concat(concat(v_marca_id,v_modelo_id), v_vehiculo_id), 0, 1, 0,
 		v_modelo_id, v_placa_id, v_propietario_id, 1);
 
   insert into carga(vehiculo_id, capacidad_toneladas)
