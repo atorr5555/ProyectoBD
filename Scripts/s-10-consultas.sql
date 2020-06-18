@@ -35,17 +35,17 @@ menor a 200
 Utiliza subconsulta, funcion de agregacion, algebra relacional
 */
 select vehiculo_id, CO, (
-	select avg(CO)
-	from registro_mediciones 
+  select avg(CO)
+  from registro_mediciones 
 ) as promedio_mediciones
 from (
-	select *
-	from registro_mediciones
-	where HC < 200
-	minus
-	select *
-	from registro_mediciones
-	where to_char(fecha, 'yyyy') = '2015'
+  select *
+  from registro_mediciones
+  where HC < 200
+  minus
+  select *
+  from registro_mediciones
+  where to_char(fecha, 'yyyy') = '2015'
 );
 
 /*
@@ -63,7 +63,7 @@ De la tabla temporal vehículo obtener el porcentaje de autos de carga
 y autos particulares que hay en el año establecido
 */
 select (numero_autos_carga/numero_autos)*100 as porcentaje_carga,
-	(numero_autos_carga/numero_autos)*100 as porcentaje_particulares
+  (numero_autos_carga/numero_autos)*100 as porcentaje_particulares
 from tabla_temporal_vehiculo;
 
 /*
