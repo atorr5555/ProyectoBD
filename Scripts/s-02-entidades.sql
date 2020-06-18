@@ -164,6 +164,7 @@ create table puntos_negativos(
   cantidad number(2,0) not null,
   documento_evidencia blob not null,
   propietario_id number(10,0) not null,
+  constraint cantidad_chk check(cantidad>0),
   constraint puntos_negativos_propietario_fk foreign key (propietario_id)
     references propietario(propietario_id)
 );
@@ -244,3 +245,7 @@ create table revision_licencia(
   constraint revision_licencia_propietario_id_fk foreign key (propietario_id)
     references propietario(propietario_id)
 );
+
+Prompt Creacion de entidades completado!.
+
+disconnect;

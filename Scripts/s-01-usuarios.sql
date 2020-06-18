@@ -12,7 +12,7 @@ grant create table, create session,create view, create procedure, create synonym
 	create sequence, create trigger to rol_admin;
 
 create role rol_invitado;
-grant create session to rol_invitado;
+grant create session, create synonym to rol_invitado;
 
 prompt creando usuario fftv_proy_admin
 create user fftv_proy_admin identified by admin quota unlimited on users;
