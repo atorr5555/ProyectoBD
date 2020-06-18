@@ -41,7 +41,7 @@ begin
 
   -- Revisa si hay una licencia que cumple con el tipo requerido
   for r in (
-    select tipo_licencia_id
+    select l.tipo_licencia_id
     from vehiculo v, propietario p, licencia l
     where v.propietario_id = p.propietario_id
     and p.propietario_id = l.propietario_id
