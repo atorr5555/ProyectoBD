@@ -7,6 +7,8 @@ set serveroutput on
 create or replace trigger tr_historico_vehiculo
   after insert or update of status_vehiculo_id on vehiculo
   for each row
+declare
+	v_fecha date;
 begin
   case 
     when updating then
@@ -16,11 +18,19 @@ begin
       end if;
   end;
 
+	-- Obteniendo fecha
+	select sysdate into v_fecha
+	from dual;
+
   -- Insertando en histórico vehículo
   insert into historico_status_vehiculo(historico_status_vehiculo_id,
     fecha_status, vehiculo_id, status_vehiculo_id)
-  values(seq_historico_status_vehiculo.nextval, sysdate,
+  values(seq_historico_status_vehiculo.nextval, v_fecha,
     :new.vehiculo_id, :new.status_vehiculo_id);
+
+	-- Actualizando fecha
+	update vehiculo set inicio_periodo = v_fecha
+	where status_vehiculo_id = :new.status_vehiculo_id;
 end;
 /
 show errors
