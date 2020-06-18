@@ -19,7 +19,7 @@ begin
   -- Insertando en histórico vehículo
   insert into historico_status_vehiculo(historico_status_vehiculo_id,
     fecha_status, vehiculo_id, status_vehiculo_id)
-  values(seq_historico_status_vehiculo.nextval, :new.fecha_status,
+  values(seq_historico_status_vehiculo.nextval, sysdate,
     :new.vehiculo_id, :new.status_vehiculo_id);
 end;
 /

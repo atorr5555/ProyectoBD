@@ -19,7 +19,7 @@ begin
   -- Insertando en historico propietario
   insert into historico_propietario(historico_propietario_id, inicio_periodo,
     propietario_id, vehiculo_id)
-  values(seq_historico_propietario.nextval, :new.inicio_periodo,
+  values(seq_historico_propietario.nextval, sysdate,
     :new.propietario_id, :new.vehiculo_id);
 end;
 /
