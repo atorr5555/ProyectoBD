@@ -1,6 +1,6 @@
 --@Autor: Flores Fuentes Kevin y Torres Verastegui Jose Antonio
---@Fecha creación: 16/06/2020
---@Descripción: Pruebas para el trigger historial_propietarios
+--@Fecha creación: 18/06/2020
+--@Descripción: Pruebas para el trigger historico_vehiculo
 
 set serveroutput on
 
