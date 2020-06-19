@@ -142,5 +142,5 @@ create sequence seq_revision_licencia
   order;
 
 
-Prompt creacion de secuencas completadas!.
+Prompt creacion de secuencias completadas!.
 disconnect;

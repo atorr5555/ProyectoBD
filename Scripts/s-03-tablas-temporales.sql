@@ -8,19 +8,19 @@ connect fftv_proy_admin/admin
 Prompt creando tabla temporal:
 
 create global temporary table tabla_temporal_vehiculo(
-  año varchar2(4) not null,
+  anio varchar2(4) not null,
   numero_autos number(10,0),
   numero_autos_carga number(20,0),
   numero_autos_particulares number(20,0)
 ) on commit delete rows; 
 
 --Obtener el numero de autos, el año, el numero de autos de carga, y el numero de autos particulares del año 2010
-
-insert into tabla_temporal_vehiculo(año,numero_autos,numero_autos_carga,numero_autos_particulares)
+/*
+insert into tabla_temporal_vehiculo(anio,numero_autos,numero_autos_carga,numero_autos_particulares)
 values ('2010',(
   select count(*) as num_autos
   from vehiculo v
-  where año='2010'
+  where anio='2010'
   ),(
   select count(*) as num_autos_carga
   from carga c, vehiculo v
@@ -34,6 +34,6 @@ values ('2010',(
 );
 
 select * from tabla_temporal_vehiculo;
-
+*/
 Prompt Listo!
 disconnect;

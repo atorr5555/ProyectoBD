@@ -122,27 +122,23 @@ Prompt **********************************
 Prompt **********************************
 Prompt       Prueba de Funciones:
 Prompt **********************************
-
-
+*/
 Prompt **********************************
 Prompt         Uso de datos LOB:
 Prompt **********************************
-
+@s-17-lob-puntos-negativos.sql
 
 Prompt **********************************
 Prompt       Prueba de datos LOB:
 Prompt **********************************
-
+--@s-18-lob-puntos-negativos-prueba.sql
 
 Prompt **********************************
 Prompt      Creacion de cursor(res):
 Prompt **********************************
-
-
-Prompt **********************************
-Prompt      Prueba de cursor(res):
-Prompt **********************************
-
+@s-19-cur-num-placas-entidad
+@s-20-cur-propietario-licencias
+/*
 Prompt **********************************
 Prompt  Ejecutando script de resultados:
 Prompt **********************************

@@ -9,7 +9,7 @@ Prompt Creando Entidades y atributos:
 create table entidad(
   entidad_id number(10,0) constraint entidad_pk primary key,
   clave varchar2(5) not null,
-  nomber varchar2(50) not null
+  nombre varchar2(50) not null
 );
 
 create table placa(
