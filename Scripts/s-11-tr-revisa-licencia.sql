@@ -10,34 +10,34 @@ create or replace trigger tr_revisa_licencia
 declare
   v_propietario_id vehiculo.propietario_id%type;
   v_tipo_licencia_id tipo_licencia.tipo_licencia_id%type;
-	v_tipo_a tipo_licencia.tipo_licencia_id%type;
-	v_tipo_b tipo_licencia.tipo_licencia_id%type;
-	v_tipo_c tipo_licencia.tipo_licencia_id%type;
+  v_tipo_a tipo_licencia.tipo_licencia_id%type;
+  v_tipo_b tipo_licencia.tipo_licencia_id%type;
+  v_tipo_c tipo_licencia.tipo_licencia_id%type;
 begin
-	select tipo_licencia_id into v_tipo_a
-	from tipo_licencia
-	where clave = 'A';
+  select tipo_licencia_id into v_tipo_a
+  from tipo_licencia
+  where clave = 'A';
 
-	select tipo_licencia_id into v_tipo_b
-	from tipo_licencia
-	where clave = 'B';
+  select tipo_licencia_id into v_tipo_b
+  from tipo_licencia
+  where clave = 'B';
 
-	select tipo_licencia_id into v_tipo_c
-	from tipo_licencia
-	where clave = 'C';
+  select tipo_licencia_id into v_tipo_c
+  from tipo_licencia
+  where clave = 'C';
 
-	v_tipo_licencia_id = :new.tipo_licencia_requerida_id;
+  v_tipo_licencia_id = :new.tipo_licencia_requerida_id;
 
-	-- Revisa si es correcto el tipo de licencia de acuerdo a los pasajeros
-	if :new.num_pasajeros_total >= 20 
-	and v_tipo_licencia_id != v_tipo_c then
-		raise_application_error(-20012, 'Tipo de licencia inválida');
-	end if;
+  -- Revisa si es correcto el tipo de licencia de acuerdo a los pasajeros
+  if :new.num_pasajeros_total >= 20 
+  and v_tipo_licencia_id != v_tipo_c then
+    raise_application_error(-20012, 'Tipo de licencia inválida');
+  end if;
 
-	if :new.num_pasajeros_parados > 0 
-	and (v_tipo_licencia_id = v_tipo_a or v_tipo_licencia_id = v_tipo_b) then
-		raise_application_error(-20012, 'Tipo de licencia inválida');
-	end if;
+  if :new.num_pasajeros_parados > 0 
+  and (v_tipo_licencia_id = v_tipo_a or v_tipo_licencia_id = v_tipo_b) then
+    raise_application_error(-20012, 'Tipo de licencia inválida');
+  end if;
 
   -- Revisa si hay una licencia que cumple con el tipo requerido
   for r in (
