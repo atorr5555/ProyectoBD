@@ -10,6 +10,7 @@ create or replace procedure sp_registra_vehiculo(
   p_es_transporte_publico number,
   p_es_carga number,
   p_es_particular number,
+	p_num_serie_dispositivo number,
   p_modelo_id number,
   p_placa_id number,
   p_propietario_id number,
@@ -66,11 +67,12 @@ begin
 
   -- Insertando en el supertipo
   insert into vehiculo(vehiculo_id, anio, numero_serie, es_transporte_publico,
-    es_carga, es_particular, inicio_periodo, fecha_status, modelo_id, placa_id,
-    propietario_id, status_vehiculo_id)
+    es_carga, es_particular, num_serie_dispositivo, inicio_periodo,
+		fecha_status, modelo_id, placa_id, propietario_id, status_vehiculo_id)
   values(p_vehiculo_id, p_anio, genera_num_serie(p_modelo_id, p_vehiculo_id),
-    p_es_transporte_publico, p_es_carga, p_es_particular, v_fecha, v_fecha,
-    p_modelo_id, p_placa_id, p_propietario_id, 1);
+    p_es_transporte_publico, p_es_carga, p_es_particular,
+		p_num_serie_dispositivo, v_fecha, v_fecha, p_modelo_id, p_placa_id,
+		p_propietario_id, 1);
   
   -- Insertando en los subtipos
   if p_es_particular = 1 then
