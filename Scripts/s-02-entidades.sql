@@ -25,7 +25,7 @@ create table placa(
 
 create table marca(
   marca_id number(10,0) constraint marca_pk primary key,
-  clave varchar2(5) not null,
+  clave varchar2(15) not null,
   descripcion varchar2(50) not null
 );
 
