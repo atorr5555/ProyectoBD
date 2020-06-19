@@ -35,7 +35,6 @@ begin
   sp_registra_vehiculo(
     p_vehiculo_id => v_vehiculo_id,
     p_anio => to_char(sysdate, 'yyyy'),
-    p_numero_serie => concat(concat(marca_id, modelo_id), placa_id),
     p_es_transporte_publico => 0,
     p_es_carga => 0,
     p_es_particular => 0,
@@ -87,7 +86,6 @@ begin
   sp_registra_vehiculo(
     p_vehiculo_id => v_vehiculo_id,
     p_anio => to_char(sysdate, 'yyyy'),
-    p_numero_serie => concat(concat(marca_id, modelo_id), placa_id),
     p_es_transporte_publico => 0,
     p_es_carga => 0,
     p_es_particular => 1,
@@ -140,7 +138,6 @@ begin
   sp_registra_vehiculo(
     p_vehiculo_id => v_vehiculo_id,
     p_anio => to_char(sysdate, 'yyyy'),
-    p_numero_serie => concat(concat(marca_id, modelo_id), placa_id),
     p_es_transporte_publico => 0,
     p_es_carga => 0,
     p_es_particular => 1,
