@@ -5,6 +5,7 @@
 
 set serveroutput on
 
+Prompt Prueba para trigger para revisar la cantidad de licencias del propietario
 Prompt =======================================
 Prompt Prueba 1.
 Prompt Insertando una licencia de tipo A a un propietario que ya tiene una vigente de ese tipo

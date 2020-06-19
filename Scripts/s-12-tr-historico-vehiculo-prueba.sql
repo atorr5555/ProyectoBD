@@ -4,6 +4,7 @@
 
 set serveroutput on
 
+Prompt Pruebas para el trigger historico_vehiculo
 Prompt =======================================
 Prompt Prueba 1.
 prompt Insertando en vehículo

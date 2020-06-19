@@ -4,6 +4,7 @@
 
 set serveroutput on
 
+Prompt Prueba para el trigger para revisar el tipo de licencia
 Prompt =======================================
 Prompt Prueba 1.
 prompt Insertando un transporte público de +20 personas con licencia inválida
