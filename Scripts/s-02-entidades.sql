@@ -59,7 +59,7 @@ create table status_vehiculo(
   descripcion varchar2(50) not null,
   constraint clave_chk check(
     clave='EN REGLA' or clave='CON LICENCIA EXPIRADA' 
-    or clave='CON ADEUDO DEIMPUESTO' or
+    or clave='CON ADEUDO DE IMPUESTO' or
     clave='CON VERIFICACION PENDIENTE'
   )
 );
