@@ -29,8 +29,8 @@ begin
     :new.vehiculo_id, :new.status_vehiculo_id);
 
 	-- Actualizando fecha
-	update vehiculo set inicio_periodo = v_fecha
-	where status_vehiculo_id = :new.status_vehiculo_id;
+	update vehiculo set fecha_status = v_fecha
+	where vehiculo_id = :new.vehiculo_id;
 end;
 /
 show errors
