@@ -3,7 +3,7 @@
 --@Descripción: Carga inicial de datos
 
 whenever sqlerror exit;
-
+@s-15-fx-genera-num-serie.sql
 @s-09-carga-entidad.sql
 @s-09-carga-placa.sql
 @s-09-carga-marca.sql

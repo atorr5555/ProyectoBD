@@ -73,7 +73,7 @@ Prompt **********************************
 Prompt          Creando Vistas:
 Prompt **********************************
 @s-08-vistas.sql
-/*
+
 Prompt **********************************
 Prompt        Carga Inicial de datos
 Prompt **********************************
@@ -87,42 +87,84 @@ Prompt **********************************
 Prompt **********************************
 Prompt           Trigger no.1:
 Prompt **********************************
-
+@s-11-tr-biometria-licencia.sql
 
 Prompt **********************************
 Prompt           Trigger no.2:
 Prompt **********************************
+@s-11-tr-historial-propietarios.sql
 
+Prompt **********************************
+Prompt           Trigger no.3:
+Prompt **********************************
+@s-11-tr-historico-vehiculo.sql
+
+Prompt **********************************
+Prompt           Trigger no.4:
+Prompt **********************************
+@s-11-tr-revisa-licencia.sql
+
+Prompt **********************************
+Prompt           Trigger no.5:
+Prompt **********************************
+@s-11-tr-revisa-placa.sql
+
+Prompt **********************************
+Prompt           Trigger no.6:
+Prompt **********************************
+@s-11-tr-valida-num-licencia.sql
 
 Prompt **********************************
 Prompt        Prueba de Triggers:
 Prompt **********************************
-
+@s-12-tr-biometria-licencia-prueba.sql
+@s-12-tr-historial-propietarios-prueba.sql
+@s-12-tr-historico-vehiculo-prueba.sql
+@s-12-tr-revisa-licencia-prueba.sql
+@s-12-tr-revisa-placa-prueba.sql
+@s-12-tr-valida-num-licencia-prueba.sql
 
 Prompt **********************************
-Prompt     Creacion del Procedimiento:
+Prompt     Creacion del Procedimiento 1:
 Prompt **********************************
-
+@s-13-p-registra-vehiculo.sql
 
 Prompt **********************************
-Prompt     Prueba del Procedimiento:
+Prompt     Prueba del Procedimiento 1:
 Prompt **********************************
+@s-14-p-registra-vehiculo-prueba.sql
 
+Prompt **********************************
+Prompt     Creacion del Procedimiento 2:
+Prompt **********************************
+@s-13-p-reporte-num-vehiculos.sql
+
+Prompt **********************************
+Prompt     Prueba del Procedimiento 2:
+Prompt **********************************
+@s-14-p-reporte-num-vehiculos-prueba.sql
 
 Prompt **********************************
 Prompt     Creacion de funcion no.1:
 Prompt **********************************
-
+@s-15-fx-calcula-total-puntos.sql
 
 Prompt **********************************
 Prompt     Creacion de funcion no.2:
 Prompt **********************************
+@s-15-fx-genera-folio-pago.sql
 
+Prompt **********************************
+Prompt     Creacion de funcion no.3:
+Prompt **********************************
+@s-15-fx-genera-num-serie.sql
 
 Prompt **********************************
 Prompt       Prueba de Funciones:
 Prompt **********************************
-*/
+@s-16-fx-calcula-total-puntos-prueba.sql
+@s-16-fx-genera-folio-pago-prueba.sql
+
 Prompt **********************************
 Prompt         Uso de datos LOB:
 Prompt **********************************
