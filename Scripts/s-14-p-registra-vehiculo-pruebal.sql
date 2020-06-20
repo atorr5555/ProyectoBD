@@ -26,7 +26,6 @@ begin
   from placa
   where fecha_asignacion is null
   and rownum = 1;
-(
   -- Obteniendo propietario
   select propietario_id into v_propietario_id
   from propietario
@@ -78,7 +77,7 @@ begin
   from placa
   where fecha_asignacion is null
   and rownum = 1;
-(
+
   -- Obteniendo propietario
   select propietario_id into v_propietario_id
   from propietario

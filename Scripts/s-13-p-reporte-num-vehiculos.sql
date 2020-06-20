@@ -12,19 +12,19 @@ create or replace procedure sp_reporte_num_vehiculos(
     select v.anio, count(*) as total_vehiculos,
       q1.num_carga, q2.num_particular
     from vehiculo v, (
-      select v.anio, count(*) as num_carga
+      select v.anio, count(c.vehiculo_id) as num_carga
       from vehiculo v, carga c
-      where v.vehiculo_id = c.vehiculo_id
+      where v.vehiculo_id = c.vehiculo_id(+)
       group by v.anio
     ) q1, (
-      select v.anio, count(*) as num_particular
+      select v.anio, count(p.vehiculo_id) as num_particular
       from vehiculo v, particular p
-      where v.vehiculo_id = p.vehiculo_id
+      where v.vehiculo_id = p.vehiculo_id(+)
       group by v.anio
     ) q2
     where v.anio = q1.anio
     and v.anio = q2.anio
-    group by v.anio;
+    group by v.anio, q1.num_carga, q2.num_particular;
 begin
   v_count := 0;
   for r in cur_reporte loop

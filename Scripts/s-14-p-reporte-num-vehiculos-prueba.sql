@@ -17,7 +17,7 @@ begin
   select count(*) into v_count
   from (
     select distinct anio
-    from vehiculo;
+    from vehiculo
   );
   if v_count = v_num_registros then
     dbms_output.put_line('OK. Prueba 1 Correcta');

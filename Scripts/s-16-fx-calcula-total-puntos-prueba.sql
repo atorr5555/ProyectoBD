@@ -10,7 +10,7 @@ Prompt ========================================
 
 declare
   v_propietario_id propietario.propietario_id%type;
-  v_fecha date;
+  v_date date;
   v_esperado number;
   v_resultado number;
 begin
