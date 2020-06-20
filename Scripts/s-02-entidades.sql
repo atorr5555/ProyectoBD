@@ -73,7 +73,8 @@ create table vehiculo(
   es_particular number(1,0) not null,
   inicio_periodo date default sysdate not null,
   fecha_status date default sysdate not null,
-	num_serie_dispositivo varchar2(20) not null,
+	num_serie_dispositivo varchar2(20) not null constraint 
+		num_serie_dispositivo_uk unique,
   modelo_id number(10,0)not null,
   constraint vehiculo_modelo_id_fk foreign key (modelo_id)
     references modelo(modelo_id),
