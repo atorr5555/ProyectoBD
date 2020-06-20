@@ -12,7 +12,7 @@ v_fecha date :=to_date('1999-03-29','YYYY-MM-DD');
 v_descripcion varchar2(30) := 'Multas aplicadas';
 v_cantidad number(10,0) :=15;
 v_nombre_documento_evidencia varchar2(100) :='multa.pdf';
-v_propietario_id number(10,0):=100;
+v_propietario_id number(10,0):=1;
 begin
 dbms_output.put_line('Exportando datos de la tabla puntos negativos');
 crea_puntos_negativos_blob(v_nombre_directorio, v_puntos_negativos_id,

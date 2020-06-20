@@ -173,18 +173,19 @@ Prompt **********************************
 Prompt **********************************
 Prompt       Prueba de datos LOB:
 Prompt **********************************
---@s-18-lob-puntos-negativos-prueba.sql
+@s-18-lob-puntos-negativos-prueba.sql
 
 Prompt **********************************
 Prompt      Creacion de cursor(res):
 Prompt **********************************
-@s-19-cur-num-placas-entidad
-@s-20-cur-propietario-licencias
+@s-19-cur-num-placa-longitud-entidad
+@s-19-cur-propietario-tipo-licencia
 
-/*
 Prompt **********************************
 Prompt  Ejecutando script de resultados:
 Prompt **********************************
+connect FFTV_PROY_ADMIN/admin
 @resultados-proyecto-final.sql
 
-*/
+Prompt Prueba terminada exitosamente!.
+disconnect;

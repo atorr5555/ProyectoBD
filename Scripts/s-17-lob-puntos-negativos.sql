@@ -6,6 +6,9 @@ set serveroutput on
 
 Prompt conectando como usuario sys
 connect sys/system as sysdba
+Prompt ========================================================================
+Prompt Creando prodecimiento para insertar datos tipo BLOB en puntos negativos
+Prompt ========================================================================
 
 create or replace directory data_dir as '/tmp/data_dir';
 grant read,write on directory data_dir to FFTV_PROY_ADMIN;
