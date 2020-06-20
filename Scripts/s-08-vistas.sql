@@ -36,6 +36,3 @@ vehiculo_id,num_bolsas_aire,numero_serie,nombre
 )as select pa.vehiculo_id,pa.num_bolsas_aire,v.numero_serie,p.nombre
 from particular pa,vehiculo v,propietario p
 where pa.vehiculo_id=v.vehiculo_id and v.propietario_id=p.propietario_id;
-
-Prompt Vistas creadas exitosamente!.
-disconnect;
