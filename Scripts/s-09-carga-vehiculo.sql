@@ -59,7 +59,7 @@ begin
       es_carga, es_particular, inicio_periodo, fecha_status,
       num_serie_dispositivo, modelo_id, placa_id, propietario_id,
       status_vehiculo_id)
-    values(v_vehiculo_id, to_char(trunc(dbms_random.value(1960, 2020))),
+    values(v_vehiculo_id, to_char(trunc(dbms_random.value(2000, 2021))),
       genera_num_serie(v_modelo_id, v_vehiculo_id),v_es_transporte, v_es_carga,
       v_es_particular, v_fecha, v_fecha, v_vehiculo_id+r.placa_id, v_modelo_id,
       r.placa_id, v_count, 1);

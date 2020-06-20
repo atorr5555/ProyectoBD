@@ -14,4 +14,7 @@ whenever sqlerror exit;
 @s-09-carga-vehiculo.sql
 @s-09-carga-licencia.sql
 
+commit;
+prompt Listo! Carga inicial completa
+
 whenever sqlerror continue;
