@@ -66,28 +66,28 @@ create sequence seq_vehiculo
 create sequence seq_registro_mediciones
   start with 1
   increment by 1
-  maxvalue 1000
+  nomaxvalue
   nocycle
   order;
 
 create sequence seq_notificacion
   start with 1
   increment by 1
-  maxvalue 100
+  nomaxvalue
   nocycle
   order;
 
 create sequence seq_verificacion
   start with 1
   increment by 1
-  maxvalue 10000
+  maxvalue 100000000
   nocycle
   order;
 
 create sequence seq_tipo_licencia
   start with 1
   increment by 1
-  maxvalue 1000000
+  maxvalue 10
   nocycle
   order;
 
@@ -108,21 +108,21 @@ create sequence seq_biometria
 create sequence seq_puntos_negativos
   start with 1
   increment by 1
-  maxvalue 1000000
+  maxvalue 100000000
   nocycle
   order;
 
 create sequence seq_historico_status_vehiculo
   start with 1
   increment by 1
-  maxvalue 1000000
+  maxvalue 1000000000
   nocycle
   order;
 
 create sequence seq_historico_propietario
   start with 1
   increment by 1
-  maxvalue 1000000
+  maxvalue 1000000000
   nocycle
   order;
 
@@ -130,7 +130,7 @@ create sequence seq_historico_propietario
 create sequence seq_pago_cuota
   start with 1
   increment by 1
-  maxvalue 1000000
+  maxvalue 1000000000
   nocycle
   order;
 

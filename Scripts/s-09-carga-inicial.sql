@@ -2,7 +2,7 @@
 --@Fecha creación: 19/06/2020
 --@Descripción: Carga inicial de datos
 
-whenever sqlerror exit;
+whenever sqlerror exit rollback;
 @s-15-fx-genera-num-serie.sql
 @s-09-carga-entidad.sql
 @s-09-carga-placa.sql
@@ -13,6 +13,7 @@ whenever sqlerror exit;
 @s-09-carga-status-vehiculo.sql
 @s-09-carga-vehiculo.sql
 @s-09-carga-licencia.sql
+@s-09-carga-mediciones.sql
 
 commit;
 prompt Listo! Carga inicial completa
