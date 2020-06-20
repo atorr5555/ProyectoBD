@@ -16,7 +16,7 @@ begin
       if :old.status_vehiculo_id = :new.status_vehiculo_id then
         raise_application_error(-20011, 'El status es el mismo');
       end if;
-  end;
+  end case;
 
 	-- Obteniendo fecha
 	select sysdate into v_fecha

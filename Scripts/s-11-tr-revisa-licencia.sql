@@ -26,7 +26,7 @@ begin
   from tipo_licencia
   where clave = 'C';
 
-  v_tipo_licencia_id = :new.tipo_licencia_requerida_id;
+  v_tipo_licencia_id := :new.tipo_licencia_requerida_id;
 
   -- Revisa si es correcto el tipo de licencia de acuerdo a los pasajeros
   if :new.num_pasajeros_total >= 20 
@@ -46,7 +46,7 @@ begin
     where v.propietario_id = p.propietario_id
     and p.propietario_id = l.propietario_id
     and v.vehiculo_id = :new.vehiculo_id
-    and l.fin_vigencia < sysdate;
+    and l.fin_vigencia < sysdate
   ) loop
     if r.tipo_licencia_id = v_tipo_licencia_id then
       return;

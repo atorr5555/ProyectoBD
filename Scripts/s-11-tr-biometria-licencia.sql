@@ -4,7 +4,7 @@
 
 set serveroutput on
 
-create or replace triger tr_biometria_licencia
+create or replace trigger tr_biometria_licencia
   after insert on licencia
   for each row
 begin
