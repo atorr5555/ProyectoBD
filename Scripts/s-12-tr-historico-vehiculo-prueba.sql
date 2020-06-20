@@ -94,7 +94,7 @@ begin
   from historico_status_vehiculo
   where vehiculo_id = v_vehiculo_id
   and status_vehiculo_id = v_status_vehiculo_id
-  and to_char(inicio_periodo, 'dd-mm-yyy') = to_char(sysdate, 'dd-mm-yyy');
+  and to_char(fecha_status, 'dd-mm-yyy') = to_char(sysdate, 'dd-mm-yyy');
 
   if v_count = 1 then
     dbms_output.put_line('OK. Prueba 2 Correcta');

@@ -46,7 +46,7 @@ begin
     where v.propietario_id = p.propietario_id
     and p.propietario_id = l.propietario_id
     and v.vehiculo_id = :new.vehiculo_id
-    and l.fin_vigencia < sysdate
+    and l.fin_vigencia > sysdate
   ) loop
     if r.tipo_licencia_id = v_tipo_licencia_id then
       return;

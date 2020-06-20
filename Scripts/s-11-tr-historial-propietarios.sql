@@ -5,32 +5,34 @@
 set serveroutput on
 
 create or replace trigger tr_historial_propietarios
-  after insert or update of propietario_id on vehiculo
-  for each row
-declare
-	v_fecha date;
+  for insert or update of propietario_id on vehiculo
+  compound trigger
+	
+before each row is
 begin
-  case 
-    when updating then
-      -- Si el propietario es el mismo
-      if :old.propietario_id = :new.propietario_id then
-        raise_application_error(-20010, 'El propietario es el mismo');
-      end if;
-  end case;
+	case 
+		when updating('propietario_id') then
+			if :old.propietario_id = :new.propietario_id then
+       	raise_application_error(-20010, 'El propietario es el mismo');
+     	end if;
+		else
+			dbms_output.put_line('');
+	end case;
+end before each row;
 
+after each row is
+v_fecha date;
+begin
 	-- Obteniendo fecha
 	select sysdate into v_fecha
 	from dual;
-  
-  -- Insertando en historico propietario
-  insert into historico_propietario(historico_propietario_id, inicio_periodo,
-    propietario_id, vehiculo_id)
-  values(seq_historico_propietario.nextval, v_fecha,
-    :new.propietario_id, :new.vehiculo_id);
 	
-	-- Actualizando fecha
-	update vehiculo set inicio_periodo = v_fecha
-	where vehiculo_id = :new.vehiculo_id;
-end;
+	-- Insertando en historico propietario
+	insert into historico_propietario(historico_propietario_id, inicio_periodo,
+		propietario_id, vehiculo_id)
+	values(seq_historico_propietario.nextval, v_fecha,
+		:new.propietario_id, :new.vehiculo_id);
+end after each row;
+end tr_historial_propietarios;
 /
 show errors

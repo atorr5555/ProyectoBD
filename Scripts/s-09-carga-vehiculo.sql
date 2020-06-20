@@ -101,6 +101,10 @@ begin
       fecha_status, vehiculo_id, status_vehiculo_id)
     values(seq_historico_status_vehiculo.nextval, v_fecha, v_vehiculo_id, 1);
 
+		-- Actualizando fecha de asignación de placa
+		update placa set fecha_asignacion = v_fecha
+		where placa_id = r.placa_id;
+
     v_count := v_count + 1;
   end loop;
 end;

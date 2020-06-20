@@ -13,7 +13,7 @@ begin
   select count(*) into v_num_licencias
   from licencia
   where propietario_id = :new.propietario_id
-  and fin_vigencia < sysdate
+  and fin_vigencia > sysdate
   and tipo_licencia_id = :new.tipo_licencia_id;
   
   -- Si hay una licencia, entonces ya no se puede insertar otra del mismo tipo

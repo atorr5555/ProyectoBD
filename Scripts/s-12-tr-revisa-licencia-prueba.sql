@@ -99,8 +99,8 @@ begin
     es_carga, es_particular, num_serie_dispositivo, modelo_id, placa_id, propietario_id,
     status_vehiculo_id)
   values(v_vehiculo_id, to_char(sysdate, 'yyyy'),
-    concat(concat(v_marca_id,v_modelo_id), v_vehiculo_id), 1, 0, 0,
-    v_modelo_id, v_placa_id, v_propietario_id, 1);
+    genera_num_serie(v_modelo_id, v_vehiculo_id), 1, 0, 0, 
+		v_modelo_id||v_vehiculo_id, v_modelo_id, v_placa_id, v_propietario_id, 1);
   
   insert into transporte_publico(vehiculo_id, num_pasajeros_sentados,
     num_pasajeros_parados, tipo_licencia_requerida_id)
@@ -156,11 +156,11 @@ begin
 
   -- Insertando en vehiculo de tipo transporte público
   insert into vehiculo(vehiculo_id, anio, numero_serie, es_transporte_publico,
-    es_carga, es_particular, modelo_id, placa_id, propietario_id,
-    status_vehiculo_id)
+    es_carga, es_particular, num_serie_dispositivo, modelo_id, placa_id,
+		propietario_id, status_vehiculo_id)
   values(v_vehiculo_id, to_char(sysdate, 'yyyy'),
-    concat(concat(v_marca_id,v_modelo_id), v_vehiculo_id), 1, 0, 0,
-    v_modelo_id, v_placa_id, v_propietario_id, 1);
+    genera_num_serie(v_modelo_id,v_vehiculo_id), 1, 0, 0, 
+		v_modelo_id||v_vehiculo_id, v_modelo_id, v_placa_id, v_propietario_id, 1);
   
   insert into transporte_publico(vehiculo_id, num_pasajeros_sentados,
     num_pasajeros_parados, tipo_licencia_requerida_id)
@@ -211,7 +211,7 @@ begin
   where p.propietario_id = l.propietario_id
   and l.tipo_licencia_id = t.tipo_licencia_id
   and t.clave = 'C'
-  and t.fin_vigencia < sysdate
+  and l.fin_vigencia > sysdate
   and rownum = 1;
 
   -- Obteniendo vehiculo_id
@@ -220,11 +220,11 @@ begin
 
   -- Insertando en vehiculo de tipo transporte público
   insert into vehiculo(vehiculo_id, anio, numero_serie, es_transporte_publico,
-    es_carga, es_particular, modelo_id, placa_id, propietario_id,
-    status_vehiculo_id)
+    es_carga, es_particular, num_serie_dispositivo, modelo_id, placa_id,
+		propietario_id, status_vehiculo_id)
   values(v_vehiculo_id, to_char(sysdate, 'yyyy'),
-    concat(concat(v_marca_id,v_modelo_id), v_vehiculo_id), 1, 0, 0,
-    v_modelo_id, v_placa_id, v_propietario_id, 1);
+    genera_num_serie(v_modelo_id, v_vehiculo_id), 1, 0, 0, 
+		v_modelo_id||v_vehiculo_id, v_modelo_id, v_placa_id, v_propietario_id, 1);
   
   insert into transporte_publico(vehiculo_id, num_pasajeros_sentados,
     num_pasajeros_parados, tipo_licencia_requerida_id)
@@ -235,7 +235,7 @@ begin
   where vehiculo_id = v_vehiculo_id
   and propietario_id = v_propietario_id;
 
-  if v_count = 1 then
+  if v_count = 0 then
     dbms_output.put_line('OK. Prueba 4 Correcta');
   else
     dbms_output.put_line('ERROR. Prueba 4 Incorrecta.'

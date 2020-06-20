@@ -37,6 +37,7 @@ begin
         dbms_output.put_line('OK. Prueba 1 Correcta');
       else
         dbms_output.put_line('ERROR. Prueba 1 Incorrecta. Código erróneo.');
+				raise;
       end if;
 end;
 /
@@ -58,7 +59,7 @@ begin
   on p.placa_id = v.placa_id
   where v.placa_id is null
   and inactiva = 0
-  and rownul = 1;
+  and rownum = 1;
 
   -- Obteniendo vehículo para modificar la placa
   select vehiculo_id into v_vehiculo_id

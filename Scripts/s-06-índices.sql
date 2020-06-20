@@ -24,7 +24,7 @@ create unique index folio_importe_iuk on pago_cuota(folio,importe);
 create unique index propietario_licencia_iuk on licencia(propietario_id,licencia_id);
 
 Prompt creando indices a base de funciones:
-create unique index nombre_completo_iuk on propietario(upper(nombre)||' '||upper(apellido_paterno));
+--create unique index nombre_completo_iuk on propietario(upper(nombre)||' '||upper(apellido_paterno));
 
 Prompt creacion de indices completada!.
 

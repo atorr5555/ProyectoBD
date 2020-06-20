@@ -20,7 +20,7 @@ begin
   from propietario p, licencia l
   where p.propietario_id = l.propietario_id
   and l.tipo_licencia_id = 1
-  and l.fin_vigencia < sysdate
+  and l.fin_vigencia > sysdate
   and rownum = 1;
 
   insert into licencia(licencia_id, num_licencia, inicio_vigencia,
@@ -36,6 +36,7 @@ begin
         dbms_output.put_line('OK. Prueba 1 Correcta');
       else
         dbms_output.put_line('ERROR. Prueba 1 Incorrecta. Código incorrecto');
+				raise;
       end if;
 end;
 /
@@ -54,7 +55,7 @@ begin
   from propietario p, licencia l
   where p.propietario_id = l.propietario_id
   and l.tipo_licencia_id = 2
-  and l.fin_vigencia < sysdate
+  and l.fin_vigencia > sysdate
   and rownum = 1;
 
   insert into licencia(licencia_id, num_licencia, inicio_vigencia,
@@ -70,6 +71,7 @@ begin
         dbms_output.put_line('OK. Prueba 2 Correcta');
       else
         dbms_output.put_line('ERROR. Prueba 2 Incorrecta. Código incorrecto');
+				raise;
       end if;
 end;
 /
@@ -88,7 +90,7 @@ begin
   from propietario p, licencia l
   where p.propietario_id = l.propietario_id
   and l.tipo_licencia_id = 3
-  and l.fin_vigencia < sysdate
+  and l.fin_vigencia > sysdate
   and rownum = 1;
 
   insert into licencia(licencia_id, num_licencia, inicio_vigencia,
@@ -104,6 +106,7 @@ begin
         dbms_output.put_line('OK. Prueba 3 Correcta');
       else
         dbms_output.put_line('ERROR. Prueba 3 Incorrecta. Código incorrecto');
+				raise;
       end if;
 end;
 /
@@ -123,11 +126,11 @@ begin
     select propietario_id
     from propietario
     minus
-    select p.propietario
+    select p.propietario_id
     from propietario p, licencia l
     where p.propietario_id = l.propietario_id
     and l.tipo_licencia_id = 1
-    and l.fin_vigencia < sysdate
+    and l.fin_vigencia > sysdate
   )
   where rownum = 1;
 
