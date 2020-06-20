@@ -123,7 +123,7 @@ Prompt **********************************
 @s-12-tr-revisa-licencia-prueba.sql
 @s-12-tr-revisa-placa-prueba.sql
 @s-12-tr-valida-num-licencia-prueba.sql
-/*
+
 Prompt **********************************
 Prompt     Creacion del Procedimiento 1:
 Prompt **********************************
@@ -180,7 +180,7 @@ Prompt      Creacion de cursor(res):
 Prompt **********************************
 @s-19-cur-num-placas-entidad
 @s-20-cur-propietario-licencias
-*/
+
 /*
 Prompt **********************************
 Prompt  Ejecutando script de resultados:
