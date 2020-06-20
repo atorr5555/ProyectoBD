@@ -5,7 +5,7 @@
 declare
   cursor cur_placas is
     select * 
-    from placas;
+    from placa;
   v_max number;
   v_count number;
   v_num_modelos number;
@@ -33,12 +33,12 @@ begin
   from dual;
 
   for r in cur_placas loop
-    exit when v_count >= v_max;
+    exit when v_count > v_max;
 
     select seq_vehiculo.nextval into v_vehiculo_id
     from dual;
 
-    v_modelo_id = dbms_random.value(1, v_num_modelos);
+    v_modelo_id := trunc(dbms_random.value(1, v_num_modelos));
 
     if v_count < trunc(v_max/3) then
       v_es_transporte := 0;

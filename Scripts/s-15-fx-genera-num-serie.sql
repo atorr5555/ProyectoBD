@@ -8,15 +8,15 @@ create or replace function genera_num_serie(
   v_modelo_id number,
   v_vehiculo_id number
 ) return varchar2 is
-  v_str varchar2(40);
+  v_str varchar2(50);
   v_marca_id number;
 begin
   select marca_id into v_marca_id
   from modelo
   where modelo_id = v_modelo_id;
-
-  v_str := concat(v_marca_id, v_modelo_id);
-  v_str := v_str||'-'||v_vehiculo_id;
+  v_str := concat(to_char(v_marca_id), to_char(v_modelo_id));
+  v_str := concat(v_str, '-');
+	v_str := concat(v_str, to_char(v_vehiculo_id));
   return v_str;
 end;
 /

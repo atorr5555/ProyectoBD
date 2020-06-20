@@ -32,7 +32,7 @@ begin
     -- Insertando en licencia
     insert into licencia(licencia_id, num_licencia, inicio_vigencia,
       fin_vigencia, propietario_id, tipo_licencia_id)
-    values(v_licencia_id, r.propietario_id+v_licencia_id, v_fecha,
+    values(v_licencia_id, r.propietario_id||v_licencia_id, v_fecha,
       add_months(v_fecha, 48), r.propietario_id, v_tipo_licencia_id);
   
     -- Insertando en biometria de la licencia

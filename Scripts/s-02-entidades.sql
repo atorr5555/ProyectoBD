@@ -67,7 +67,7 @@ create table status_vehiculo(
 create table vehiculo(
   vehiculo_id number(10,0) constraint vehiculo_pk primary key,
   anio varchar2(4) not null,
-  numero_serie varchar2(40) not null constraint numero_serie_uk unique,
+  numero_serie varchar2(50) not null constraint numero_serie_uk unique,
   es_transporte_publico number(1,0) not null,
   es_carga number(1,0) not null,
   es_particular number(1,0) not null,

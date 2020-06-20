@@ -11,8 +11,8 @@ create index RFC_ix on propietario(RFC);
 create index clave_ix on entidad(clave);
 
 Prompt creando indices unique:
-create unique index nombre_iuk on  propietario(nombre);
-create unique index fecha_status_iuk on vehiculo(fecha_status);
+--create unique index nombre_iuk on  propietario(nombre);
+--create unique index fecha_status_iuk on vehiculo(fecha_status);
 create unique index clave_Status_iuk on status_vehiculo(clave);
 create unique index num_licencia_iuk on licencia(num_licencia);
 
