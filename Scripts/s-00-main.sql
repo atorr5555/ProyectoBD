@@ -189,8 +189,8 @@ Prompt **********************************
 Prompt **********************************
 Prompt      Creacion de cursor(res):
 Prompt **********************************
---@s-19-cur-num-placa-longitud-entidad
---@s-19-cur-propietario-tipo-licencia
+@s-19-cur-num-placa-longitud-entidad
+@s-19-cur-propietario-tipo-licencia
 
 Prompt **********************************
 Prompt  Ejecutando script de resultados:

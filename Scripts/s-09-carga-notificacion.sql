@@ -2,6 +2,8 @@
 --@Fecha creación: 20/06/2020
 --@Descripción: Carga de notificaciones basada en mediciones
 
+set serveroutput on
+
 declare
 	cursor cur_mediciones is
 		select *
@@ -19,9 +21,6 @@ begin
 			insert into historico_status_vehiculo(historico_status_vehiculo_id,
 				fecha_status, vehiculo_id, status_vehiculo_id)
 			values(seq_historico_status_vehiculo.nextval, r.fecha, r.vehiculo_id, 4);
-
-			update vehiculo set fecha_status = r.fecha
-			where vehiculo_id = r.vehiculo_id;
 		end if;
 	end loop;
 end;

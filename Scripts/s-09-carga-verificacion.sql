@@ -2,6 +2,8 @@
 --@Fecha creación: 20/06/2020
 --@Descripción: Carga de verificaciones, una por cada notificación
 
+set serveroutput on
+
 declare
 	cursor cur_notificacion is
 		select registro_mediciones_id, fecha
@@ -37,9 +39,6 @@ begin
 		insert into historico_status_vehiculo(historico_status_vehiculo_id,
 			fecha_status, vehiculo_id, status_vehiculo_id)
 		values(seq_historico_status_vehiculo.nextval, v_fecha, v_vehiculo_id, 1);
-
-		update vehiculo set fecha_status = v_fecha
-		where vehiculo_id = v_vehiculo_id;
 	end loop;
 end;
 /

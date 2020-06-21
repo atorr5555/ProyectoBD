@@ -32,7 +32,8 @@ prompt Cargando pagos ...
 @s-09-carga-pago.sql
 prompt Cargando verificaciones ...
 @s-09-carga-verificacion.sql
-
+prompt Actualizando fechas de status
+@s-09-carga-fecha-status.sql
 commit;
 prompt Listo! Carga inicial completa
 
