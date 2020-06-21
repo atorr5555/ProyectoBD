@@ -1,6 +1,6 @@
 --@Autor: Flores Fuentes Kevin y Torres Verástegui José Antonio
 --@Fecha de creación: 16/06/2020
---@descripción: Creacion de secuencias necesarias en la bd
+--@descripción: Consultas
 
 /*Este archivo contendrá 5 o más consultas. El criterio es libre. Se debe emplear el uso de los siguientes elementos.
 - joins (inner join, natural join, outer join)
@@ -16,8 +16,8 @@ No es necesario crear una consulta por cada elemento. En una misma consulta pued
 
 /*
 Consulta para encontrar todos los vehículos particulares que no tienen frenos
-ABS cuyo status sea diferente a 'EN REGLA'. Obtener su id, año, numero de serie
-y el tipo de transmision.
+ABS cuyo status sea 'EN REGLA' y su año sea 2019. Obtener su id, año, numero de
+serie y el tipo de transmision.
 
 Utiliza joins, sinonimos
 */
@@ -26,26 +26,29 @@ select v.vehiculo_id, v.anio, v.numero_serie, p.tipo_transmision
 from XX_vehiculo v, XX_particular p, XX_status_vehiculo s
 where v.vehiculo_id = p.vehiculo_id
 and v.status_vehiculo_id = s.status_vehiculo_id
-and s.descripcion != 'EN REGLA';
+and s.clave = 'EN REGLA'
+and v.anio = '2019'
+and p.tiene_abs = 0;
 
 /*
-Consulta para mostar las mediciones de CO y el id de todos los autos. No mostrar
-las mediciones realizadas ante del 2015. Mostar las mediciones en las que HC sea
-menor a 200
+Consulta para mostar las mediciones de CO y el id de todos los autos. No considerar
+las mediciones realizadas antes del 2020. Mostar las mediciones en las que HC sea
+menor a 35
 Utiliza subconsulta, funcion de agregacion, algebra relacional
 */
 select vehiculo_id, CO, (
-  select avg(CO)
-  from registro_mediciones 
+  select trunc(avg(CO), 4)
+  from registro_mediciones
+  where fecha < to_date('2020', 'yyyy')
 ) as promedio_mediciones
 from (
   select *
   from registro_mediciones
-  where HC < 200
+  where HC < 35
   minus
   select *
   from registro_mediciones
-  where to_char(fecha, 'yyyy') = '2015'
+  where fecha < to_date('2020', 'yyyy')
 );
 
 /*
