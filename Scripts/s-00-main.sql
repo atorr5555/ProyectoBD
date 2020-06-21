@@ -115,6 +115,11 @@ Prompt **********************************
 @s-11-tr-valida-num-licencia.sql
 
 Prompt **********************************
+Prompt           Trigger no.7:
+Prompt **********************************
+@s-11-tr-genera-notificacion.sql
+
+Prompt **********************************
 Prompt        Prueba de Triggers:
 Prompt **********************************
 @s-12-tr-biometria-licencia-prueba.sql
@@ -123,6 +128,7 @@ Prompt **********************************
 @s-12-tr-revisa-licencia-prueba.sql
 @s-12-tr-revisa-placa-prueba.sql
 @s-12-tr-valida-num-licencia-prueba.sql
+@s-12-tr-genera-notificacion-prueba.sql
 
 Prompt **********************************
 Prompt     Creacion del Procedimiento 1:
@@ -160,6 +166,11 @@ Prompt **********************************
 @s-15-fx-genera-num-serie.sql
 
 Prompt **********************************
+Prompt     Creacion de funcion no.4:
+Prompt **********************************
+@s-15-fx-genera-num-notif.sql
+
+Prompt **********************************
 Prompt       Prueba de Funciones:
 Prompt **********************************
 @s-16-fx-calcula-total-puntos-prueba.sql
@@ -178,8 +189,8 @@ Prompt **********************************
 Prompt **********************************
 Prompt      Creacion de cursor(res):
 Prompt **********************************
-@s-19-cur-num-placa-longitud-entidad
-@s-19-cur-propietario-tipo-licencia
+--@s-19-cur-num-placa-longitud-entidad
+--@s-19-cur-propietario-tipo-licencia
 
 Prompt **********************************
 Prompt  Ejecutando script de resultados:

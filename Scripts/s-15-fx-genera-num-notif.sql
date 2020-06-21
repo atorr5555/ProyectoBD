@@ -5,7 +5,8 @@
 set serveroutput on
 
 create or replace function genera_num_notif(
-  v_registro_mediciones_id number
+  v_registro_mediciones_id number,
+	v_vehiculo number default null
 ) return number is
   v_count number;
 	v_vehiculo_id number;
