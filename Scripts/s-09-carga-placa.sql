@@ -3,8 +3,8 @@ declare
 begin
   select count(*) into v_count
   from entidad;
-  insert into placa (placa_id, num_placa, fecha_asignacion, inactiva, entidad_id) values (seq_placa.nextval, '201429463854388', null, 1, trunc(dbms_random.value(1, v_count)));
-  insert into placa (placa_id, num_placa, fecha_asignacion, inactiva, entidad_id) values (seq_placa.nextval, '5018961816405787071', null, 1, trunc(dbms_random.value(1, v_count)));
+  insert into placa (placa_id, num_placa, fecha_asignacion, inactiva, entidad_id) values (seq_placa.nextval, '201429463854388', null, 0, trunc(dbms_random.value(1, v_count)));
+  insert into placa (placa_id, num_placa, fecha_asignacion, inactiva, entidad_id) values (seq_placa.nextval, '5018961816405787071', null, 0, trunc(dbms_random.value(1, v_count)));
   insert into placa (placa_id, num_placa, fecha_asignacion, inactiva, entidad_id) values (seq_placa.nextval, '344182191661942', null, 0, trunc(dbms_random.value(1, v_count)));
   insert into placa (placa_id, num_placa, fecha_asignacion, inactiva, entidad_id) values (seq_placa.nextval, '3534369867417014', null, 0, trunc(dbms_random.value(1, v_count)));
   insert into placa (placa_id, num_placa, fecha_asignacion, inactiva, entidad_id) values (seq_placa.nextval, '3545562217746291', null, 0, trunc(dbms_random.value(1, v_count)));
@@ -1001,7 +1001,7 @@ begin
   insert into placa (placa_id, num_placa, fecha_asignacion, inactiva, entidad_id) values (seq_placa.nextval, '5245778877865753', null, 0, trunc(dbms_random.value(1, v_count)));
   insert into placa (placa_id, num_placa, fecha_asignacion, inactiva, entidad_id) values (seq_placa.nextval, '374622110621686', null, 0, trunc(dbms_random.value(1, v_count)));
   insert into placa (placa_id, num_placa, fecha_asignacion, inactiva, entidad_id) values (seq_placa.nextval, '5602252825235946', null, 0, trunc(dbms_random.value(1, v_count)));
-  insert into placa (placa_id, num_placa, fecha_asignacion, inactiva, entidad_id) values (seq_placa.nextval, '3561097271523384', null, 0, trunc(dbms_random.value(1, v_count)));
-  insert into placa (placa_id, num_placa, fecha_asignacion, inactiva, entidad_id) values (seq_placa.nextval, '372301211809035', null, 0, trunc(dbms_random.value(1, v_count)));	
+  insert into placa (placa_id, num_placa, fecha_asignacion, inactiva, entidad_id) values (seq_placa.nextval, '3561097271523384', null, 1, trunc(dbms_random.value(1, v_count)));
+  insert into placa (placa_id, num_placa, fecha_asignacion, inactiva, entidad_id) values (seq_placa.nextval, '372301211809035', null, 1, trunc(dbms_random.value(1, v_count)));	
 end;
 /

@@ -29,9 +29,6 @@ begin
   select count(*) into v_num_modelos
   from modelo;
 
-  select sysdate into v_fecha
-  from dual;
-
   for r in cur_placas loop
     exit when v_count > v_max;
 
@@ -39,6 +36,13 @@ begin
     from dual;
 
     v_modelo_id := trunc(dbms_random.value(1, v_num_modelos));
+
+		-- Generando una fecha aleatoria
+		v_fecha := to_date(to_char(trunc(dbms_random.value(1, 28)))
+			||'-'
+			||to_char(trunc(dbms_random.value(1, 12)))
+			||'-'
+			||to_char(trunc(dbms_random.value(2000, 2020))), 'dd-mm-yyyy');
 
     if v_count < trunc(v_max/3) then
       v_es_transporte := 0;
@@ -59,7 +63,7 @@ begin
       es_carga, es_particular, inicio_periodo, fecha_status,
       num_serie_dispositivo, modelo_id, placa_id, propietario_id,
       status_vehiculo_id)
-    values(v_vehiculo_id, to_char(trunc(dbms_random.value(2000, 2021))),
+    values(v_vehiculo_id, to_char(v_fecha, 'yyyy'),
       genera_num_serie(v_modelo_id, v_vehiculo_id),v_es_transporte, v_es_carga,
       v_es_particular, v_fecha, v_fecha, v_vehiculo_id+r.placa_id, v_modelo_id,
       r.placa_id, v_count, 1);
