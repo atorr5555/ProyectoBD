@@ -31,6 +31,14 @@ begin
 		values(seq_registro_mediciones.nextval, trunc(dbms_random.value(30, 100)), 
 			trunc(dbms_random.value(0,0.05), 3), trunc(dbms_random.value(0,3), 3),
 			trunc(dbms_random.value(), 3), v_fecha,  v_vehiculo_id);
+
+		-- Vuelve a estado en regla
+		insert into historico_status_vehiculo(historico_status_vehiculo_id,
+			fecha_status, vehiculo_id, status_vehiculo_id)
+		values(seq_historico_status_vehiculo.nextval, v_fecha, v_vehiculo_id, 1);
+
+		update vehiculo set fecha_status = v_fecha
+		where vehiculo_id = v_vehiculo_id;
 	end loop;
 end;
 /
