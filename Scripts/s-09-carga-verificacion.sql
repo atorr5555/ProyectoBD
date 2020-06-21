@@ -22,7 +22,8 @@ begin
 
 		insert into verificacion(verificacion_id, fecha_verificacion,
 			folio_verificacion, vehiculo_id)
-		values(v_verificacion_id, v_fecha, v_verificacion_id||v_vehiculo_id,
+		values(v_verificacion_id, v_fecha, 
+			v_verificacion_id||to_char(v_fecha, 'dd'),
 			v_vehiculo_id);
 
 		-- Por cada verificacion también se inserta una nueva medición

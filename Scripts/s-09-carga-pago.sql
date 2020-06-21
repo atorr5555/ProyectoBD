@@ -14,7 +14,7 @@ begin
 		v_vehiculo_id := r.vehiculo_id;
 		while v_fecha <= sysdate loop
 			insert into pago_cuota(folio, vehiculo_id, fecha_pago, importe)
-			values(genera_folio_pago(v_vehiculo_id), v_vehiculo_id, v_fecha, 4000.00);
+			values(genera_folio(v_vehiculo_id), v_vehiculo_id, v_fecha, 4000.00);
 			v_fecha := add_months(v_fecha, 12);
 		end loop;
 	end loop;

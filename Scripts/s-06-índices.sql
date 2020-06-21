@@ -20,7 +20,7 @@ create unique index num_licencia_iuk on licencia(num_licencia);
 Prompt creando indices compuestos:
 create unique index vehiculo_propietario_iuk on vehiculo(vehiculo_id,propietario_id);
 create unique index vehiculo_placa_iuk on vehiculo(vehiculo_id,placa_id);
-create unique index folio_importe_iuk on pago_cuota(folio,importe);
+--create unique index folio_importe_iuk on pago_cuota(folio,importe);
 create unique index propietario_licencia_iuk on licencia(propietario_id,licencia_id);
 
 Prompt creando indices a base de funciones:
