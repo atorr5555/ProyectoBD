@@ -16,7 +16,7 @@ begin
 		while v_fecha <= sysdate loop
 			insert into registro_mediciones(registro_mediciones_id, hc, co, nox, co2,
 				fecha, vehiculo_id)
-			values(seq_registro_mediciones.nextval, trunc(dbms_random.value(30, 120)), 
+			values(seq_registro_mediciones.nextval, trunc(dbms_random.value(30, 105)), 
 				trunc(dbms_random.value(0,0.05), 3), trunc(dbms_random.value(0,3), 3),
 				trunc(dbms_random.value(), 3), v_fecha,  v_vehiculo_id);
 			v_fecha := v_fecha + 10;
