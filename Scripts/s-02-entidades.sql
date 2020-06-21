@@ -228,7 +228,7 @@ create table particular(
 );
 
 create table pago_cuota(
-  folio number(10,0) not null constraint folio_uk unique,
+  folio number(10,0) not null,
   vehiculo_id number(10,0) not null,
   constraint pago_cuota_vehiculo_fk foreign key (vehiculo_id)
     references vehiculo(vehiculo_id),
