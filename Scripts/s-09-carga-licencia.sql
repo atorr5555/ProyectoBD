@@ -23,7 +23,7 @@ begin
     from vehiculo
     where propietario_id = r.propietario_id;
 
-    if v_es_transporte = 1 then
+    if v_es_transporte != 1 then
 			if dbms_random.value() > 0.5  then
 				v_tipo_licencia_id := 1;
 			else
