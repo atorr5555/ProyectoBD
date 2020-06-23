@@ -14,7 +14,7 @@ create table entidad(
 
 create table placa(
   placa_id number(10,0) constraint placa_pk primary key,
-  num_placa varchar2(40) not null constraint num_placa_uk unique,
+  num_placa varchar2(20) not null constraint num_placa_uk unique,
   fecha_asignacion date,
   inactiva number(1,0) not null,
   entidad_id number(10,0) not null,
