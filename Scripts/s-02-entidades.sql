@@ -237,16 +237,6 @@ create table pago_cuota(
   constraint pago_cuota_pk primary key(folio,vehiculo_id)
 );
 
-create table revision_licencia(
-  revision_licencia_id number(10,0) constraint revision_licencia_pk primary key,
-  vehiculo_id number(10,0),
-  propietario_id number(10,0),
-  constraint revision_licencia_vehiculo_id_fk foreign key (vehiculo_id)
-    references vehiculo(vehiculo_id),
-  constraint revision_licencia_propietario_id_fk foreign key (propietario_id)
-    references propietario(propietario_id)
-);
-
 Prompt Creacion de entidades completado!.
 
 disconnect;
