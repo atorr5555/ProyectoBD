@@ -38,8 +38,7 @@ begin
 		insert into notificacion(notificacion_id, num_notificacion, fecha,
 			registro_mediciones_id)
 		values(seq_notificacion.nextval,
-			genera_num_notif(insert_list(v_index).registro_mediciones_id,
-				insert_list(v_index).vehiculo_id),
+			genera_num_notif(insert_list(v_index).registro_mediciones_id),
 			insert_list(v_index).fecha, insert_list(v_index).registro_mediciones_id);
 
 		select status_vehiculo_id into v_status_id
