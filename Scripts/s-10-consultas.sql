@@ -62,6 +62,16 @@ group by nombre
 having count(*) > 3;
 
 /*
+Obtener el total de asientos en transportes públicos por año
+siempre y cuando la cantidad de asientos sea mayor a 100
+*/
+
+select anio, sum(num_pasajeros_sentados) as total_asientos
+from vehiculo_transporte
+group by anio
+having sum(num_pasajeros_sentados) > 100;
+
+/*
 De la tabla temporal vehículo obtener el porcentaje de autos de carga
 y autos particulares que hay en el año establecido
 */
