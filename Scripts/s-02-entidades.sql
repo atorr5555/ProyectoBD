@@ -148,7 +148,7 @@ create table licencia(
 );
 
 create table biometria(
-  licencia_id number(30,0) not null,
+  licencia_id number(10,0) not null,
   constraint biometria_licencia_id_fk foreign key (licencia_id)
     references licencia(licencia_id),
   foto blob not null,
