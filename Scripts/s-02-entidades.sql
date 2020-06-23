@@ -136,7 +136,7 @@ create table licencia(
   num_licencia varchar2(15) not null,
   inicio_vigencia date not null,
   fin_vigencia date not null,
-  licencia_anterior_id number(30,0),
+  licencia_anterior_id number(10,0),
   constraint licencia_anterior_fk foreign key (licencia_anterior_id)
     references licencia(licencia_id),
   propietario_id number(10,0) not null,
