@@ -22,6 +22,7 @@ begin
     dbms_output.put_line('Eliminando al usuario');
     execute immediate 'drop user FFTV_PROY_ADMIN cascade ';
   end if;
+
   select count(*) into v_count
   from dba_users
   where username = 'FFTV_PROY_INVITADO';
@@ -29,10 +30,24 @@ begin
     dbms_output.put_line('Eliminando al usuario');
     execute immediate 'drop user FFTV_PROY_INVITADO cascade ';
   end if;
+
+	select count(*) into v_count
+	from dba_roles
+	where role = 'ROL_ADMIN';
+	if v_count > 0 then
+		dbms_output.put_line('Eliminando rol_admin');
+		execute immediate 'drop role rol_admin';
+	end if;
+
+	select count(*) into v_count
+	from dba_roles
+	where role = 'ROL_INVITADO';
+	if v_count > 0 then
+		dbms_output.put_line('Eliminando rol_invitado');
+		execute immediate 'drop role rol_invitado';
+	end if;
 end;
 /
-drop role rol_admin;
-drop role rol_invitado;
 
 Prompt **********************************
 Prompt        Creando Usuarios:
@@ -189,8 +204,8 @@ Prompt **********************************
 Prompt **********************************
 Prompt      Creacion de cursor(res):
 Prompt **********************************
-@s-19-cur-num-placa-longitud-entidad
-@s-19-cur-propietario-tipo-licencia
+@s-19-cur-num-placa-longitud-entidad.sql
+@s-19-cur-propietario-tipo-licencia.sql
 
 Prompt **********************************
 Prompt  Ejecutando script de resultados:
