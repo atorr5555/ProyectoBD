@@ -167,9 +167,9 @@ begin
   values(v_vehiculo_id, 15, 10, 3);
 
   select count(*) into v_count
-  from revision_licencia
+  from vehiculo
   where vehiculo_id = v_vehiculo_id
-  and propietario_id = v_propietario_id;
+  and status_vehiculo_id = 2;
 
   if v_count = 1 then
     dbms_output.put_line('OK. Prueba 3 Correcta');
@@ -231,9 +231,9 @@ begin
   values(v_vehiculo_id, 15, 10, 3);
 
   select count(*) into v_count
-  from revision_licencia
+  from vehiculo
   where vehiculo_id = v_vehiculo_id
-  and propietario_id = v_propietario_id;
+  and status_vehiculo_id = 2;
 
   if v_count = 0 then
     dbms_output.put_line('OK. Prueba 4 Correcta');

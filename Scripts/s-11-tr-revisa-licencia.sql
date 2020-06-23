@@ -53,15 +53,11 @@ begin
     end if;
   end loop;
 
-  -- Obtener el id del propietario
-  select propietario_id into v_propietario_id
-  from vehiculo
-  where vehiculo_id = :new.vehiculo_id;
-  
-  -- Insertar a una tabla de revisiones pendientes
-  insert into revision_licencia(revision_licencia_id, vehiculo_id,
-    propietario_id)
-  values(seq_revision_licencia.nextval, :new.vehiculo_id, v_propietario_id);
+	-- Cambia status de vehiculo
+	update vehiculo 
+	set status_vehiculo_id = 2,
+	fecha_status = sysdate
+	where vehiculo_id = :new.vehiculo_id;
 end;
 /
 show errors
