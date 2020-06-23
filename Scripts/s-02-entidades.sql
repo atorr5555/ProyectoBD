@@ -209,8 +209,8 @@ create table carga(
   constraint carga_vehiculo_fk foreign key (vehiculo_id)
     references vehiculo(vehiculo_id),
   capacidad_toneladas number(5,2) not null,
-  capacidad_m3 number(5,2) default null,
-  num_remolques number(2,0) default null,
+  capacidad_m3 number(5,2),
+  num_remolques number(2,0),
   constraint carga_pk primary key(vehiculo_id)
 );
 
