@@ -37,12 +37,12 @@ begin
 
     v_modelo_id := trunc(dbms_random.value(1, v_num_modelos));
 
-		-- Generando una fecha aleatoria
-		v_fecha := to_date(to_char(trunc(dbms_random.value(1, 28)))
-			||'-'
-			||to_char(trunc(dbms_random.value(1, 12)))
-			||'-'
-			||to_char(trunc(dbms_random.value(2000, 2020))), 'dd-mm-yyyy');
+    -- Generando una fecha aleatoria
+    v_fecha := to_date(to_char(trunc(dbms_random.value(1, 28)))
+      ||'-'
+      ||to_char(trunc(dbms_random.value(1, 12)))
+      ||'-'
+      ||to_char(trunc(dbms_random.value(2000, 2020))), 'dd-mm-yyyy');
 
     if v_count < trunc(v_max/3) then
       v_es_transporte := 0;
@@ -105,9 +105,9 @@ begin
       fecha_status, vehiculo_id, status_vehiculo_id)
     values(seq_historico_status_vehiculo.nextval, v_fecha, v_vehiculo_id, 1);
 
-		-- Actualizando fecha de asignación de placa
-		update placa set fecha_asignacion = v_fecha
-		where placa_id = r.placa_id;
+    -- Actualizando fecha de asignación de placa
+    update placa set fecha_asignacion = v_fecha
+    where placa_id = r.placa_id;
 
     v_count := v_count + 1;
   end loop;

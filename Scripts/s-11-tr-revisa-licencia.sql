@@ -53,11 +53,11 @@ begin
     end if;
   end loop;
 
-	-- Cambia status de vehiculo
-	update vehiculo 
-	set status_vehiculo_id = 2,
-	fecha_status = sysdate
-	where vehiculo_id = :new.vehiculo_id;
+  -- Cambia status de vehiculo
+  update vehiculo 
+  set status_vehiculo_id = 2,
+  fecha_status = sysdate
+  where vehiculo_id = :new.vehiculo_id;
 end;
 /
 show errors

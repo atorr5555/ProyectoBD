@@ -37,7 +37,7 @@ begin
     p_es_transporte_publico => 0,
     p_es_carga => 0,
     p_es_particular => 0,
-		p_num_serie_dispositivo => '4516135313',
+    p_num_serie_dispositivo => '4516135313',
     p_modelo_id => v_modelo_id,
     p_placa_id => v_placa_id,
     p_propietario_id  => v_propietario_id
@@ -89,7 +89,7 @@ begin
     p_es_transporte_publico => 0,
     p_es_carga => 0,
     p_es_particular => 1,
-		p_num_serie_dispositivo => '4516135313',
+    p_num_serie_dispositivo => '4516135313',
     p_modelo_id => v_modelo_id,
     p_placa_id => v_placa_id,
     p_propietario_id  => v_propietario_id
@@ -142,7 +142,7 @@ begin
     p_es_transporte_publico => 0,
     p_es_carga => 0,
     p_es_particular => 1,
-		p_num_serie_dispositivo => '4516135313',
+    p_num_serie_dispositivo => '4516135313',
     p_modelo_id => v_modelo_id,
     p_placa_id => v_placa_id,
     p_propietario_id  => v_propietario_id,

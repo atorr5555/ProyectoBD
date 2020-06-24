@@ -37,7 +37,7 @@ begin
         dbms_output.put_line('OK. Prueba 1 Correcta');
       else
         dbms_output.put_line('ERROR. Prueba 1 Incorrecta. Código erróneo.');
-				raise;
+        raise;
       end if;
 end;
 /

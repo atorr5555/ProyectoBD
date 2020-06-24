@@ -45,8 +45,8 @@ begin
     es_carga, es_particular, num_serie_dispositivo, modelo_id, placa_id, propietario_id,
     status_vehiculo_id)
   values(v_vehiculo_id, to_char(v_fecha, 'yyyy'),
-		concat(concat(v_marca_id,v_modelo_id), v_vehiculo_id), 0, 1, 0, '154996335',
-		v_modelo_id, v_placa_id, v_propietario_id, 1);
+    concat(concat(v_marca_id,v_modelo_id), v_vehiculo_id), 0, 1, 0, '154996335',
+    v_modelo_id, v_placa_id, v_propietario_id, 1);
 
   insert into carga(vehiculo_id, capacidad_toneladas)
   values(v_vehiculo_id, 5.2);
@@ -77,15 +77,15 @@ declare
 begin
   -- Obteniendo status actual y vehiculo
   select vehiculo_id, status_vehiculo_id 
-	into v_vehiculo_id, v_status_vehiculo_actual_id
+  into v_vehiculo_id, v_status_vehiculo_actual_id
   from vehiculo
   where rownum = 1;
 
   -- Obteniendo nuevo status
-	select status_vehiculo_id into v_status_vehiculo_id
-	from status_vehiculo
-	where status_vehiculo_id != v_status_vehiculo_actual_id
-	and rownum = 1;
+  select status_vehiculo_id into v_status_vehiculo_id
+  from status_vehiculo
+  where status_vehiculo_id != v_status_vehiculo_actual_id
+  and rownum = 1;
 
   update vehiculo set status_vehiculo_id = v_status_vehiculo_id
   where vehiculo_id = v_vehiculo_id;
@@ -116,7 +116,7 @@ declare
 begin
   -- Obteniendo status actual y vehiculo
   select vehiculo_id, status_vehiculo_id 
-	into v_vehiculo_id, v_status_vehiculo_actual_id
+  into v_vehiculo_id, v_status_vehiculo_actual_id
   from vehiculo
   where rownum = 1;
 

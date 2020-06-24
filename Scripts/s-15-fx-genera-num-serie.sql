@@ -16,7 +16,7 @@ begin
   where modelo_id = v_modelo_id;
   v_str := concat(to_char(v_marca_id), to_char(v_modelo_id));
   v_str := concat(v_str, '-');
-	v_str := concat(v_str, to_char(v_vehiculo_id));
+  v_str := concat(v_str, to_char(v_vehiculo_id));
   return v_str;
 end;
 /
