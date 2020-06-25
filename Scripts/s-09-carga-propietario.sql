@@ -1,3 +1,7 @@
+--@Autor: FLores Fuentes Kevin y Torres Verastegui Jose Antonio
+--@Fecha creación: 19/06/2020
+--@Descripción: Carga de propietarios y sus telefonos
+
 insert into propietario (propietario_id, nombre, apellido_paterno, apellido_materno, rfc, email) values (seq_propietario.nextval, 'Rolf', 'Botger', 'Pimm', null, 'rpimm0@indiegogo.com');
 insert into telefono_propietario (telefono_propietario_id, num_telefono, propietario_id) values (seq_telefono_propietario.nextval, '3259294356', seq_propietario.currval);
 insert into propietario (propietario_id, nombre, apellido_paterno, apellido_materno, rfc, email) values (seq_propietario.nextval, 'Marcel', 'Ambrosio', 'Fellnee', null, 'mfellnee1@narod.ru');

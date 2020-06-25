@@ -1,3 +1,7 @@
+--@Autor: FLores Fuentes Kevin y Torres Verastegui Jose Antonio
+--@Fecha creación: 19/06/2020
+--@Descripción: Carga de marcas
+
 insert into marca (marca_id, clave, descripcion) values (seq_marca.nextval, 'MITSUBISHI', 'Es una empresa que fabrica automóviles');
 insert into marca (marca_id, clave, descripcion) values (seq_marca.nextval, 'DODGE', 'Es una marca de automóviles y camiones');
 insert into marca (marca_id, clave, descripcion) values (seq_marca.nextval, 'AUDI', 'Es una empresa que fabrica automóviles');

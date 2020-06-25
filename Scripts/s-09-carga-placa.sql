@@ -1,3 +1,7 @@
+--@Autor: FLores Fuentes Kevin y Torres Verastegui Jose Antonio
+--@Fecha creación: 19/06/2020
+--@Descripción: Carga de placas
+
 declare
   v_count number;
 begin

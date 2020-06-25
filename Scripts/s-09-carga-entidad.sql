@@ -1,3 +1,7 @@
+--@Autor: Flores Fuentes Kevin y Torres Verástegui José Antonio
+--@Fecha de creación: 18/06/2020
+--@descripción: Carga de entidades
+
 insert into entidad(entidad_id, clave, nombre) values(seq_entidad.nextval, 'AGS', 'AGUASCALIENTES');
 insert into entidad(entidad_id, clave, nombre) values(seq_entidad.nextval, 'BC', 'BAJA CALIFORNIA');
 insert into entidad(entidad_id, clave, nombre) values(seq_entidad.nextval, 'BCS', 'BAJA CALIFORNIA SUR');
